@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { company, nav } from "@/lib/content";
+import { company } from "@/lib/content";
 import { LogoMark } from "@/components/Logo";
 
 export default function Footer() {
@@ -13,15 +12,6 @@ export default function Footer() {
           </div>
           <p className="mt-2 max-w-xs text-sm text-muted">{company.tagline}</p>
         </div>
-        <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
-          {nav.map((item) => (
-            <li key={item.href}>
-              <Link href={item.href} className="transition-colors hover:text-foreground">
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
         <div className="text-sm text-muted">
           <a href={`mailto:${company.email}`} className="hover:text-foreground">
             {company.email}
