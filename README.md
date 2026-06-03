@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Prismonex Solutions
 
-## Getting Started
+The marketing website for **Prismonex Solutions** — a technology company building
+intelligent, reliable, and scalable systems: AI & software, cloud infrastructure,
+IT services, and hardware, plus our own SaaS products.
 
-First, run the development server:
+> Intelligent infrastructure, built to scale.
+
+## Tech stack
+
+- **[Next.js 16](https://nextjs.org)** (App Router) + **React 19** + **TypeScript**
+- **[Tailwind CSS v4](https://tailwindcss.com)** (CSS-first `@theme` config)
+- Fully static — every page prerenders to HTML
+- No runtime dependencies beyond the standard Next.js server
+- Animations are pure CSS/SVG and respect `prefers-reduced-motion`
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start the local dev server |
+| `npm run build` | Production build + TypeScript typecheck |
+| `npm run start` | Serve the production build |
+| `npm run lint` | Run ESLint |
 
-## Learn More
+There is no test suite; `npm run build` is the correctness gate — it typechecks
+and statically prerenders every page.
 
-To learn more about Next.js, take a look at the following resources:
+## Project structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├─ app/                 # App Router pages (Home, About, Services, Products, Contact)
+│  ├─ layout.tsx        # Root layout: nav + footer, metadata
+│  ├─ globals.css       # Tailwind v4 theme ("Trust Blue") + animations
+│  └─ icon.svg          # Favicon
+├─ components/          # Nav, Footer, Logo, ContactForm, animation helpers,
+│  │                    # and the dark-hero visuals (HeroAI, HeroBackground, …)
+│  └─ sections/         # Home page sections (Stats, WhyUs, Process, Clients, Faq, …)
+└─ lib/
+   └─ content.ts        # Single source of all site copy and data
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**All copy and data live in `src/lib/content.ts`.** Editing services, clients,
+FAQs, team members, or company details is a data change there — not a layout edit.
 
-## Deploy on Vercel
+## Configuration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Copy the example env file and add your contact-form key to enable real submissions:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+cp .env.local.example .env.local
+```
+
+| Variable | Purpose |
+|----------|---------|
+| `NEXT_PUBLIC_WEB3FORMS_KEY` | [Web3Forms](https://web3forms.com) access key for the contact form. Without it, the form falls back to a prefilled `mailto:`. |
+
+## Deployment
+
+Deploys to [Vercel](https://vercel.com) (or any Next.js host) with no extra
+configuration. Set `NEXT_PUBLIC_WEB3FORMS_KEY` in the host's environment to
+activate real contact-form delivery.
+
+---
+
+© 2026 Prismonex Solutions. All rights reserved.
