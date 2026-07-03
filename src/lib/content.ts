@@ -14,7 +14,7 @@ export const company = {
     "We build and deliver data-driven technology solutions - AI systems, cloud infrastructure, IT services, and hardware - to solve real-world problems efficiently and at scale.",
   vision:
     "To become a globally recognized technology company building intelligent infrastructure and systems that power businesses, governments, and communities.",
-  email: "wilfridh@prismonex.com",
+  email: "info@prismonex.com",
 } as const;
 
 export type Service = {
