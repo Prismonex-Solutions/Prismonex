@@ -34,7 +34,7 @@ export function Logo({ className = "" }: { className?: string }) {
         width={1684}
         height={539}
         priority
-        className="h-9 w-auto transition-transform duration-300 group-hover:scale-105"
+        className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
       />
     </Link>
   );
