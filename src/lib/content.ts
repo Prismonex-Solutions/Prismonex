@@ -7,6 +7,8 @@ export const company = {
   // Legal entity. Use ONLY for legal signatures: footer copyright, contracts,
   // invoices, the "brand of" line. Customers should almost never see this.
   legalName: "Prismonex Solutions LLC",
+  // Registration jurisdiction (DC Corporations Division; domestic LLC).
+  jurisdiction: "Washington, D.C., USA",
   tagline: "Intelligent, reliable, scalable technology.",
   mission:
     "We build and deliver data-driven technology solutions - AI systems, cloud infrastructure, IT services, and hardware - to solve real-world problems efficiently and at scale.",

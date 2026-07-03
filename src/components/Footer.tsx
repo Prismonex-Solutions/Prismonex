@@ -24,8 +24,9 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <div className="border-t border-white/10 py-4 text-center text-xs text-white/50">
-        © 2026 {company.legalName}. All rights reserved.
+      <div className="space-y-1 border-t border-white/10 py-4 text-center text-xs text-white/50">
+        <p>© 2026 {company.legalName}. All rights reserved.</p>
+        <p>Registered in {company.jurisdiction}.</p>
       </div>
     </footer>
   );
