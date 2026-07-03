@@ -178,11 +178,9 @@ export const clients: Client[] = [
 // The team. `photo` is an optional path under /public (e.g. "/team/jane.jpg");
 // without one, an initials avatar is shown.
 export type TeamMember = { name: string; role: string; photo?: string };
-export const team: TeamMember[] = [
-  // TODO: replace placeholders with the real founders / team.
-  { name: "Founder Name", role: "Co-founder & CEO" },
-  { name: "Co-founder Name", role: "Co-founder & CTO" },
-];
+// Empty for now — the "Our team" section on /about stays hidden until real
+// members are added here (e.g. { name: "…", role: "…", photo: "/team/…" }).
+export const team: TeamMember[] = [];
 
 export const values = [
   { title: "Ownership", body: "Everyone operates with a founder mindset." },
