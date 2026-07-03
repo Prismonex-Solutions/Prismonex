@@ -29,6 +29,9 @@ export default function About() {
         software innovation, cloud infrastructure, IT services, and hardware
         distribution.
       </p>
+      <p className="mt-4 text-sm text-subtle">
+        {company.name} is the brand of {company.legalName}.
+      </p>
 
       <div className="mt-16 grid gap-10 sm:grid-cols-2">
         <Reveal>

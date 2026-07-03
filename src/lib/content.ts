@@ -2,7 +2,11 @@
 // Editing copy here keeps it consistent across pages.
 
 export const company = {
-  name: "Prismonex Solutions",
+  // Customer-facing brand. Use this everywhere in the UI (nav, hero, headings).
+  name: "Prismonex",
+  // Legal entity. Use ONLY for legal signatures: footer copyright, contracts,
+  // invoices, the "brand of" line. Customers should almost never see this.
+  legalName: "Prismonex Solutions LLC",
   tagline: "Intelligent, reliable, scalable technology.",
   mission:
     "We build and deliver data-driven technology solutions - AI systems, cloud infrastructure, IT services, and hardware - to solve real-world problems efficiently and at scale.",

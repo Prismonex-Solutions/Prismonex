@@ -1,6 +1,6 @@
-# Prismonex Solutions
+# Prismonex
 
-The marketing website for **Prismonex Solutions** — a technology company building
+The marketing website for **Prismonex** (a brand of Prismonex Solutions LLC) — a technology company building
 intelligent, reliable, and scalable systems: AI & software, cloud infrastructure,
 IT services, and hardware, plus our own SaaS products.
 
@@ -41,7 +41,7 @@ and statically prerenders every page.
 src/
 ├─ app/                 # App Router pages (Home, About, Services, Products, Contact)
 │  ├─ layout.tsx        # Root layout: nav + footer, metadata
-│  ├─ globals.css       # Tailwind v4 theme ("Trust Blue") + animations
+│  ├─ globals.css       # Tailwind v4 theme (Prismonex brand system) + animations
 │  └─ icon.svg          # Favicon
 ├─ components/          # Nav, Footer, Logo, ContactForm, animation helpers,
 │  │                    # and the dark-hero visuals (HeroAI, HeroBackground, …)
@@ -73,4 +73,4 @@ activate real contact-form delivery.
 
 ---
 
-© 2026 Prismonex Solutions. All rights reserved.
+© 2026 Prismonex Solutions LLC. All rights reserved.
