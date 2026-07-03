@@ -11,9 +11,6 @@ export default function Footer() {
             {company.name}
           </div>
           <p className="mt-2 max-w-xs text-sm text-white/60">{company.tagline}</p>
-          <p className="mt-4 text-xs text-white/45">
-            A brand of {company.legalName}
-          </p>
         </div>
         <div className="text-sm text-white/70">
           <a

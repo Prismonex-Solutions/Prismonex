@@ -47,21 +47,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0f2c; /* Midnight Navy */
-    --surface: #0f152f;
-    --foreground: #f1f5f9;
-    --muted: #b4bccd;
-    --subtle: #8b93a7;
-    --border: #232c4a;
-    --brand: #4d84ff; /* lightened Royal Blue for contrast on navy */
-    --brand-ink: #1565ff;
-    --brand-2: #00cfff;
-    --accent-purple: #8b5cff;
-    --accent-magenta: #ff5cc4;
-  }
-}
+/*
+ * The Prismonex brand is a light brand (white pages, navy footer/hero), and the
+ * logo wordmark art is dark-on-light. We intentionally do NOT auto-switch to a
+ * dark theme, so the brand look — and the logo — stay consistent everywhere.
+ */
 
 body {
   background: var(--background);

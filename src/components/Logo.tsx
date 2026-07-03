@@ -19,14 +19,23 @@ export function LogoMark({ className = "h-7 w-auto" }: { className?: string }) {
   );
 }
 
+/**
+ * Full header lockup: the official mark + `Prismonex` wordmark art (no tagline),
+ * exactly as designed. Source: design/logo.png -> public/logo.png. Because the
+ * wordmark is dark-on-light, it lives on the light header only (the footer uses
+ * `LogoMark` + text on its dark band instead).
+ */
 export function Logo({ className = "" }: { className?: string }) {
   return (
-    <Link
-      href="/"
-      className={`group flex items-center gap-2 font-semibold tracking-tight ${className}`}
-    >
-      <LogoMark className="h-8 w-auto transition-transform duration-300 group-hover:scale-110" />
-      <span className="text-lg">{company.name}</span>
+    <Link href="/" aria-label={`${company.name} home`} className={`group inline-flex ${className}`}>
+      <Image
+        src="/logo.png"
+        alt={company.name}
+        width={1684}
+        height={539}
+        priority
+        className="h-9 w-auto transition-transform duration-300 group-hover:scale-105"
+      />
     </Link>
   );
 }
