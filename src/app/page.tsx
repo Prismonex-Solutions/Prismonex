@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { company, services } from "@/lib/content";
 import Reveal from "@/components/Reveal";
 import HeroBackground from "@/components/HeroBackground";
@@ -92,6 +93,34 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Brand feature band */}
+      <section className="border-t border-border bg-[#070d1c] text-white">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-20 lg:grid-cols-2">
+          <Reveal>
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                Transforming complexity into{" "}
+                <span className="text-spectrum">clarity</span>
+              </h2>
+              <p className="mt-4 max-w-md text-lg leading-8 text-white/70">
+                Like a prism resolving light into a clean spectrum, we turn
+                tangled systems into intelligent, connected infrastructure —
+                strategy to support, under one roof.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <Image
+              src="/home/clarity.png"
+              alt="A prism refracting a beam of light into a spectrum"
+              width={1600}
+              height={1000}
+              className="w-full rounded-2xl"
+            />
+          </Reveal>
         </div>
       </section>
 

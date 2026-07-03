@@ -50,6 +50,7 @@ export const services: Service[] = [
       "System installation & maintenance",
       "Technical support services",
     ],
+    image: "/services/it-services.png",
   },
   {
     slug: "hardware",
@@ -61,6 +62,7 @@ export const services: Service[] = [
       "Printers & accessories",
       "Tablets & electronic devices",
     ],
+    image: "/services/hardware.png",
   },
   {
     slug: "saas",
@@ -68,6 +70,7 @@ export const services: Service[] = [
     blurb:
       "B2B and B2C platforms we design, build, and operate end to end.",
     points: ["B2C SaaS", "B2B SaaS", "Platform creation"],
+    image: "/services/saas.png",
   },
 ];
 
@@ -86,6 +89,7 @@ export const products: Product[] = [
     status: "In development",
     blurb:
       "Our first SaaS platform is in active development. Get in touch to join the early-access list.",
+    image: "/products/platform.png",
   },
 ];
 

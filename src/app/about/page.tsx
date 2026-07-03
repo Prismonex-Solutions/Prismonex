@@ -33,6 +33,17 @@ export default function About() {
         {company.name} is the brand of {company.legalName}.
       </p>
 
+      <Reveal>
+        <Image
+          src="/about/vision.png"
+          alt="A network of connected nodes rising toward a bright point"
+          width={1600}
+          height={1000}
+          className="mt-10 w-full rounded-2xl border border-border"
+          priority
+        />
+      </Reveal>
+
       <div className="mt-16 grid gap-10 sm:grid-cols-2">
         <Reveal>
           <div className="h-full rounded-2xl border border-border p-8 transition duration-200 hover:border-foreground hover:shadow-md">
