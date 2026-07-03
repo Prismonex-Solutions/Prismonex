@@ -39,6 +39,7 @@ export const services: Service[] = [
       "Software engineering",
       "Cloud infrastructure & deployment",
     ],
+    image: "/services/ai-software-cloud.png",
   },
   {
     slug: "it-services",
