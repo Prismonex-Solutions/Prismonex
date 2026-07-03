@@ -22,6 +22,9 @@ export type Service = {
   title: string;
   blurb: string;
   points: string[];
+  // Optional marketing image under /public (e.g. "/services/ai.png"). When set,
+  // it renders beside the division; when omitted, the card is text-only.
+  image?: string;
 };
 
 // Maps to the four business divisions.
@@ -72,6 +75,8 @@ export type Product = {
   name: string;
   status: "Available" | "In development" | "Coming soon";
   blurb: string;
+  // Optional product image/mockup under /public (e.g. "/products/platform.png").
+  image?: string;
 };
 
 // Update as products ship. Placeholders until the first product launches.

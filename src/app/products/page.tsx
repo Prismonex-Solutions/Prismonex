@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { products } from "@/lib/content";
 import Reveal from "@/components/Reveal";
 
@@ -28,16 +29,27 @@ export default function Products() {
       <div className="mt-16 grid gap-6 sm:grid-cols-2">
         {products.map((p, i) => (
           <Reveal key={p.name} delay={i * 80}>
-            <div className="h-full rounded-2xl border border-border p-8 transition duration-200 hover:-translate-y-1 hover:border-foreground hover:shadow-md">
-              <div className="flex items-center justify-between gap-4">
-                <h2 className="text-xl font-semibold">{p.name}</h2>
-                <span
-                  className={`rounded-full px-3 py-1 text-xs font-medium ${statusStyles[p.status]}`}
-                >
-                  {p.status}
-                </span>
+            <div className="h-full overflow-hidden rounded-2xl border border-border transition duration-200 hover:-translate-y-1 hover:border-foreground hover:shadow-md">
+              {p.image && (
+                <Image
+                  src={p.image}
+                  alt={`${p.name} preview`}
+                  width={1600}
+                  height={1000}
+                  className="w-full border-b border-border"
+                />
+              )}
+              <div className="p-8">
+                <div className="flex items-center justify-between gap-4">
+                  <h2 className="text-xl font-semibold">{p.name}</h2>
+                  <span
+                    className={`rounded-full px-3 py-1 text-xs font-medium ${statusStyles[p.status]}`}
+                  >
+                    {p.status}
+                  </span>
+                </div>
+                <p className="mt-3 text-muted">{p.blurb}</p>
               </div>
-              <p className="mt-3 text-muted">{p.blurb}</p>
             </div>
           </Reveal>
         ))}

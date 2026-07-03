@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { services } from "@/lib/content";
 import Reveal from "@/components/Reveal";
 
@@ -21,32 +22,52 @@ export default function Services() {
       </p>
 
       <div className="mt-16 space-y-6">
-        {services.map((s, i) => (
-          <Reveal key={s.slug} delay={i * 80}>
-            <div
-              id={s.slug}
-              className="grid gap-6 rounded-2xl border border-border p-8 transition duration-200 hover:border-foreground hover:shadow-md sm:grid-cols-[auto_1fr]"
-            >
-              <div className="text-2xl font-semibold text-brand sm:w-16">
-                {String(i + 1).padStart(2, "0")}
+        {services.map((s, i) => {
+          const img = s.image;
+          return (
+            <Reveal key={s.slug} delay={i * 80}>
+              <div
+                id={s.slug}
+                className={`grid items-center gap-8 rounded-2xl border border-border p-8 transition duration-200 hover:border-foreground hover:shadow-md ${
+                  img ? "md:grid-cols-2" : ""
+                }`}
+              >
+                <div className="grid gap-6 sm:grid-cols-[auto_1fr]">
+                  <div className="text-2xl font-semibold text-brand sm:w-16">
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-semibold tracking-tight">
+                      {s.title}
+                    </h2>
+                    <p className="mt-2 text-muted">{s.blurb}</p>
+                    <ul className="mt-4 flex flex-wrap gap-2">
+                      {s.points.map((p) => (
+                        <li
+                          key={p}
+                          className="rounded-full border border-border px-3 py-1 text-sm text-muted"
+                        >
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                {img && (
+                  <Image
+                    src={img}
+                    alt={`${s.title} illustration`}
+                    width={1600}
+                    height={1000}
+                    className={`w-full rounded-xl border border-border ${
+                      i % 2 ? "md:order-first" : ""
+                    }`}
+                  />
+                )}
               </div>
-              <div>
-                <h2 className="text-2xl font-semibold tracking-tight">{s.title}</h2>
-                <p className="mt-2 text-muted">{s.blurb}</p>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {s.points.map((p) => (
-                    <li
-                      key={p}
-                      className="rounded-full border border-border px-3 py-1 text-sm text-muted"
-                    >
-                      {p}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </Reveal>
-        ))}
+            </Reveal>
+          );
+        })}
       </div>
 
       <div className="mt-16">
